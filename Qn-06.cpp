@@ -7,29 +7,37 @@ using namespace std ;
 class Square
 {
     private :
-        int num ;  //optional 
+        int num , result ;
+        static int count ;  
+        
     public :
         int sqr (int x)
         {
             num = x ;
-            return num*num ;
+            result = num*num ;
+            count++ ;
         }
         void print()
         {
-            cout<<"Square of "<<num<<" is = "<<sqr(num) ;
+            cout<<"Square of "<<num<<" is "<<result<<endl<<"Function is called "<<count<<" times by the objects";
         }
 } ;
 
-
+int Square :: count = 0 ;
 
 int main ()
 {
-    Square S ;
+    Square S ,S1 ;
     int a ;
     cout<<"Enter a numbers : ";
     cin>>a ;
 
     S.sqr(a) ;
-    S.print() ;
+    //S.print() ;
+
+    S1.sqr(8);
+    S1.print();
+    
+    
     return 0 ;
 }
